@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        #container{
+            display:grid;
+            grid-template-columns:1fr 1fr 1fr;
+         gap:20px;
+        }
+        #container div{
+            background:lightsalmon;
+            padding:3%;
+        }
+    </style>
+  </head>
+  <body>
+    <div id="container"></div>
+    <script>
+      /*
+    how to take input from the user
+    let inp=prompt('enter a number')
+    console.log(inp)
+
+    conditional statements
+    if 
+    else
+    else if
+
+    if(conditon1){
+    //block of code
+    }
+    else if(condition2){
+    //block of code
+    }
+    else{
+    //block of code
+    }
+    dom
+    document object model
+    it is used to control the html ,css from script
+    <div id='container'></div>
+
+    let  container=document.getElementById('container');
+    console.log(container)
+    container.innerHTML='new content'
+
+    let name=prompt('enter your name')
+    let marks=+prompt('enter your marks')
+    console.log(name,marks)
+    console.log(typeof name,typeof marks)
+    let grade=''
+    if(marks>75){
+    grade='A'
+   }else if(marks>50){
+    grade='B'
+   }
+   else if(marks>35){
+    grade="c"
+   }else{
+    grade="F"
+   }
+   console.log(`Hello ${name} your grade is ${grade} for your ${marks} marks`)
+
+
+   let container=document.getElementById('container')
+   //    console.log(container)
+   container.innerHTML=`Hello ${name} your grade is ${grade} for your ${marks} marks`;
+   
+   loops
+   loops are used execute a block of code multiple times and used for iteration
+
+   types of loops
+   1) for loop
+   2) while loop
+   3) do while loop
+   4) for in loop
+   5) for off
+
+   for loop
+   it is also called as counter loop -used when iterations are known
+
+   for(starting ;endingpoint;source){
+    //journey
+   }
+
+   for(initialization;condition;updation){
+   //block of cde
+   }
+
+   for (let i=0;i<=10;i++){
+   console.log(i)
+   }
+
+   initialization
+
+   while(condition){
+   //block of code
+   updation
+   }
+
+   let j=10;
+   while(j<=20){
+   console.log(j)
+   j++
+   }
+
+
+   while(true){
+   console.log('propesed to a girl')
+   let answer=prompt('do you love me')
+   if(answer=='yes'){
+   break;
+   }
+   console.log('one more try')
+   }
+
+   for (let i = 0; i <= 10; i++) {
+    console.log(i);
+}
+
+let j = 10;
+while (j <= 20) {
+        console.log(j);
+        j++;
+      }
+
+      while (true) {
+        console.log("proposed to a girl");
+        let answer = prompt("do you love me");
+        if (answer == "yes") {
+            console.log("mission successfull");
+            break;
+        }
+        console.log("one more try");
+    }
+
+    do while loop
+
+    intialization
+
+    do{
+    //block of code
+    updation}
+    while(conditon)
+
+let k=10
+
+do{
+console.log(k)
+k++
+}
+while(k<10)
+
+for in
+it is used to iterate the keys or indexes of array,,strings and objects
+
+let str='hello'
+let arr=['html','css','js']
+let obj={
+name:'john',
+age:23
+}
+
+for(let i in str){
+console.log(i);//indexes
+console.log(str[i]);//values
+}
+for(let i in arr){
+console.log(i);//indexes
+console.log(arr[i]);//values
+}
+for(let i in obj){
+console.log(i);//indexes
+console.log(obj[i]);//values
+}
+
+let k= 10
+do{
+console.log(k)
+k++
+}
+while(k<10)
+
+let str='hello'
+let arr=['html','css','js']
+let obj={
+name:'john',
+age:23
+}
+for(let i in str){
+console.log(i);//indexes
+console.log(str[i]);//values
+}
+for(let i in arr){
+console.log(i);//indexes
+console.log(arr[i]);//values
+}
+for(let i in obj){
+console.log(i);//indexes
+console.log(obj[i]);//values
+}
+
+for of
+it is used to iterate the values of strings and arrays
+
+    */
+let str='hello world'
+for (let i of str){
+    console.log(i)
+}
+let arr=['html','css','js']
+for (let i of arr){
+    console.log(i)
+}
+
+let students=[
+    {
+        name:'john',
+        marks:90
+    },
+    {
+        name:'jessy',
+        marks:80
+    },
+        {
+        name:'jack',
+        marks:40
+    },
+    {
+        name:'jim',
+        marks:30
+    }
+]
+
+
+for (let i of students){
+    console.log(i)
+  let grade=''
+    if(i.marks>75){
+    grade='A'
+   }else if(i.marks>50){
+    grade='B'
+   }
+   else if(i.marks>35){
+    grade="c"
+   }else{
+    grade="F"
+   }
+    let container=document.getElementById('container')
+   container.innerHTML+=`<div>Hello ${i.name} your grade is ${grade} for your ${i.marks} marks </div    >`
+}
+
+    </script>
+  </body>
+</html>

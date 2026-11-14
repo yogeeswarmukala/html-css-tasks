@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+
+        code divided into two ways
+        1)  synchronous code
+          which executes line by line doesnt take much time
+
+        2) asynchronous
+          which executes parallel which is independent from main code base
+          which takes time
+
+
+          event loop mechanism
+          1) callstack
+          2) webapi
+          3) callback que
+          4) event loop
+        
+        
+          console.log('one')
+   
+          setTimeout(() => {
+              console.log('two')
+          }, 2000);
+   
+          console.log('three')
+
+
+          ex: timers,api calling
+
+          promises
+          it represents the eventual completion or failure of an asynchronous operation
+
+          three states 
+          fullfilled
+          pending
+          rejected
+
+          1) creating a promise
+            let prom=new Promise((res,rej)=>{
+            let val=10
+            if(val==10){
+                res('promise is resolved')
+            }
+            else{
+                rej('promiser is rejected')
+            }
+
+          })
+
+          2) consuming a promise 
+          a) .then.catch
+            prom.then((success)=>{console.log(success)})
+        .catch((err)=>console.log(err)) 
+          b) async await
+          let prom=new Promise((res,rej)=>{
+            let val=10
+            if(val==10){
+                res('promise is resolved')
+            }
+            else{
+                rej('promiser is rejected')
+            }
+        })
+
+        prom.then((success)=>{console.log(success)})
+        .catch((err)=>console.log(err)) 
+
+        async function getprom(){
+            //it pauses the execution until the promise is settled
+            let data=await prom
+            console.log(data)
+        }
+        getprom()
+
+
+        backend - build the apis 
+        /menswear
+        /kidswear
+        /womenswear
+
+
+        public 
+
+        private apis
+
+        fetch()
+        it is used to make a api request from the client and returns a respone in
+        promise 
+
+        using .then.catch
+        using async await
+
+        */ 
+
+        let apiurl='https://fakestoreapi.com/products'
+
+        fetch(apiurl).then((data)=>data.json())
+        .then((finaldata)=>console.log(finaldata))
+        .catch((err)=>console.log(err))
+
+        async function getapidata(){
+            let data=await fetch(apiurl)
+            let finaldata=await data.json()
+            console.log(finaldata)
+        }
+        getapidata()
+        </script>
+</body>
+</html>

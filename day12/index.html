@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+        header,footer{
+            background:black;
+            color:white;
+            padding:4%;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+        }
+        header>ul{
+            display:flex;
+            gap:10px;
+            list-style-type: none;
+        }
+        header span{
+            color:rgb(18, 176, 18);
+            padding:10px;
+            border:2px solid rgb(23, 148, 23);
+        }
+        li{
+            transition: all 1s;
+        }
+        header li:hover{
+            color:rgb(27, 216, 27);
+            border-bottom:2px solid rgb(23, 148, 23);
+        }
+
+        .s1 img{
+         width:100%;
+         height:100%;
+        }
+        .s1{
+            font-size:1.1rem;
+            background:black;
+            color:white;
+            line-height:2;
+            display:flex;
+            align-items:center; 
+        }
+        .s1>div{
+            padding:3%;
+            flex-basis:50%;
+        }
+        .btn1{
+            background:green;
+            color:black;
+            padding:10px;
+            border:none;
+        }
+        .btn2{
+            padding:10px;
+            border:2px solid green; 
+            background:transparent;
+            color:white;
+        }
+
+
+
+         .s2{
+            background:black;
+            padding:15px;
+        }
+        .s2>div{
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            height:90vh;
+            background:rgba(36, 33, 33, 0.778) !important;
+        }
+        .s2 h1{
+            text-align: center;;
+            background:green;
+            padding:10px;
+            width:21%;
+            color:white;
+        }
+       
+.s3{
+    background:black;
+    color:white;
+    text-align: center;
+    padding:3%;
+}
+.container{
+    display:flex;
+    gap:20px;
+    justify-content: center;
+}
+.container>div{
+    flex-basis:22%;
+    padding:3%; 
+    line-height: 2;
+    height:60vh;
+     background:rgba(15, 15, 16, 0.871) !important;
+     border:2px solid black
+}
+.s3 i{
+    font-size: 3rem;
+    color:green
+}
+
+.container>div:hover{
+    transition: all 1s;
+    transform: translate(0px,-10px);
+    border:2px solid green;
+}
+
+.s4{
+    background:black;
+    color:white;
+    text-align:center;
+    padding:3%;
+}
+.parent{
+    display:flex;
+    justify-content: center;
+    gap:30px;
+}
+.child{
+    flex-basis:30%;
+    line-height: 1.6;
+     background:rgba(15, 15, 16, 0.871) !important;
+}
+.parent img{
+    width:100%;
+    height:250px;
+}
+
+.s5{
+    background:black;
+    color:white;
+    text-align: center;
+    padding:3%;
+}
+table{  
+    width:90%;
+}
+th{
+    background:green;
+    color:white;
+    padding:2%;
+}
+td{
+    padding:2%;
+}
+
+.s6{
+    background:black;
+    color:white;
+    display:flex;
+    padding:2%;
+    font-size:1.3rem;
+    line-height: 1.5;
+}
+.s6>div{
+    flex-basis:50%;
+    padding:2%;
+}
+li::marker{
+color:green;    
+font-size:2rem;
+}
+
+
+
+@media screen and (width<592px){
+    header,.s1,.s2>div,.s6,.parent,.container{
+        flex-direction:column;  
+    }
+    html{
+        font-size:12px;
+    }
+}
+    </style>
+</head>
+<body>
+    <header>
+        <h1><span>JD</span> John Doe</h1>
+        <ul>
+            <li>About</li>
+            <li>Achievements</li>
+            <li>Education</li>
+            <li>Projects</li>
+            <li>Contact</li>
+        </ul>
+    </header>
+
+
+    <section class="s1">
+        <div>
+            <h1>Hi, I'm <span style="color:green;"> John Doe</span> </h1>
+            <h1>I build simple and clean websites.</h1>
+            <p>I am a web development student who loves turning ideas into real, working web pages.</p>
+            <button class="btn1">view projects</button>
+            <button class="btn2">Download CV</button>
+        </div>
+        <div>
+            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085" alt="">
+        </div>
+    </section>
+
+    <section class="s2">
+        <div>
+            <h1>FullStack Dev</h1>
+        </div>
+    </section>
+
+    <section class="s3">
+        <h1>What I Do</h1>
+        <div class="container">
+            <div class="card">
+                <i class="fa-sharp fa-regular fa-desktop"></i>
+                <h2>Web Design</h2>
+                <p>Design clean and attractive websites that provide great user experience</p>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-code"></i>
+                <h2>Development</h2>
+                <p>Design clean and attractive websites that provide great user experience</p>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-chart-column"></i>
+                <h2>SEO & Analytics</h2>
+                <p>Design clean and attractive websites that provide great user experience</p>
+            </div>
+            <div class="card">
+                <i class="fa-brands fa-space-awesome"></i>
+                <h2>Performance</h2>
+                <p>Design clean and attractive websites that provide great user experience</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="s4">
+        <h1>Projects</h1>
+        <div class="parent">
+            <div class="child">
+                <div><img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=1200&auto=format&fit=crop" alt=""></div>
+                <h1>Portfolio Website</h1>
+                <p>A personal portfolio website built using HTML to showcase my skills and projects.</p>
+                <button class="btn2">view details </button>
+            </div>
+            <div class="child">
+                <div><img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1200&auto=format&fit=crop" alt=""></div>
+                <h1>Student Registration Form</h1>
+                <p>A simple registration form created using HTML form elements</p>
+                <button class="btn2">view details </button>
+            </div>
+            <div class="child">
+                <div><img src="https://images.unsplash.com/photo-1587145820266-a5951ee6f620?q=80&w=1200&auto=format&fit=crop" alt=""></div>
+                <h1>Calculator</h1>
+                <p>A basic calculator built using HTML, CSS and JavaScript.</p>
+                <button class="btn2">view details </button>
+            </div>
+        </div>
+    </section>
+
+    <section class="s5">
+        <h1>Education</h1>
+        <table border="2" >
+            <tr>
+            <th>Qualification</th>
+            <th>Institution</th>
+            <th>Year</th>
+            <th>Location</th>
+        </tr>
+            <tr>
+                <td>Btech</td>
+                <td>Gitam</td>
+                <td>2023-2026</td>
+                <td>Hyd</td>
+            </tr>
+            <tr>
+                <td>Diplamo</td>
+                <td>MVGR</td>
+                <td>2020-2023</td>
+                <td>Vizag</td>
+            </tr>
+        </table>
+    </section>
+
+    <section class="s6">
+        <div>
+            <h1>Achievements</h1>
+            <ul>
+                <li>Completed HTML & CSS fundamentals course.</li>
+                <li> Built multiple small projects using HTML.</li>
+                <li>Consistently learning and improving every day.</li>
+                <li>Practicing problem solving and logical thinking.</li>
+            </ul>
+        </div>
+        <div>
+             <h1>Contact</h1>
+             <ul>
+                <li>Email: johndoe@example.com</li>
+                <li> Phone: +123 456 7890</li>
+                <li>Website: www.johndoe.com</li>
+                <li>Location: New York, USA</li>
+             </ul>
+        </div>
+    </section>
+<!--  -->
+    <footer>
+        <p>© 2024 John Doe. All rights reserved.</p>
+        <div>$ % * &</div>
+    </footer>
+
+
+
+</body>
+</html>

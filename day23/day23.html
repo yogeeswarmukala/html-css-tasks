@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+       map 
+       it is used to create transformed array by applying a provided function for every item
+       it will creat a new array
+
+       let arr=[1,2,3,4,5,6]
+
+       filter 
+       it is used to create a filtered array by applying a provided boolean funciton for
+       every item
+
+       reduce
+       it will convert the group of items into single value by applying mathematical
+       calculations
+
+
+       sort 
+       it is used to sort the array in asscending and descending order
+       if a-b is negative it wont swap
+       if a-b is postive it will swap
+
+
+         */
+       let arr=[1,2,3,4,5,6]
+       let newarr=arr.map((val,ind,ar)=>{
+         return val+val
+       })
+       console.log(arr)
+       console.log(newarr)
+
+       let evenarr=arr.filter((val)=>{
+        return val%2==0
+       })
+       console.log(evenarr)
+
+
+       let numbers=[2343,5,23,78,1]
+       let sorted=numbers.sort((a,b)=>{
+        return a-b
+       })
+       console.log(sorted)
+
+       
+
+     let total=numbers.reduce((acc,val,ind,ar)=>{
+      return acc+val
+     },0)
+     console.log(total)
+ let data=localStorage.getItem('cdgstudent')
+        console.log(data)
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,168 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regex Form Validation</title>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial;
+        }
+
+        body{
+            background:#f4f4f4;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+        }
+
+        .container{
+            width:400px;
+        }
+
+        form{
+            background:white;
+            padding:30px;
+            border-radius:10px;
+            box-shadow:0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        h1{
+            text-align:center;
+            margin-bottom:20px;
+        }
+
+        .form-group{
+            margin-bottom:20px;
+        }
+
+        label{
+            display:block;
+            margin-bottom:5px;
+        }
+
+        input{
+            width:100%;
+            padding:12px;
+            border:1px solid #ccc;
+            border-radius:5px;
+            outline:none;
+        }
+
+        input:focus{
+            border-color:black;
+        }
+
+        small{
+            color:red;
+        }
+
+        .submit-btn,
+        .show-btn{
+            width:100%;
+            padding:12px;
+            border:none;
+            background:black;
+            color:white;
+            border-radius:5px;
+            cursor:pointer;
+            margin-top:10px;
+        }
+
+        .submit-btn:hover,
+        .show-btn:hover{
+            background:#333;
+        }
+
+        #successmessage{
+            margin-top:20px;
+            text-align:center;
+            color:green;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div class="container">
+        <h1>Registration Form</h1>
+        <form action="" id="registerform">
+            <div class="form-group">
+                <label for="">Full Name</label>
+                <input type="text" id="name">
+                <small id="nameerror"></small>
+            </div>
+            <div class="form-group">
+                <label for="">Email</label>
+                <input type="text" id="email">
+                <small id="emailerror"></small>
+            </div>
+            <div class="form-group">
+                <label for="">Password</label>
+                <input type="password" id="password">
+                <small id="passworderror"></small>
+            </div>
+            <div class="form-group">
+                <label for="">Confirm Password</label>
+                <input type="password" id="cpassword">
+                <small id="cpassworderror"></small>
+            </div>
+            <button type="submit" class="submit-btn">submit</button>
+        </form>
+        <div id="successmessage"></div>
+    </div>
+
+
+    <script>
+        let registerform=document.getElementById('registerform')
+        registerform.onsubmit=function(e){
+            e.preventDefault()
+            let name=document.getElementById('name')
+            let nameerror=document.getElementById('nameerror')
+            let email=document.getElementById('email')
+            let emailerror=document.getElementById('emailerror')
+
+            let password=document.getElementById('password')
+            let passworderror=document.getElementById('passworderror')
+            let cpassword=document.getElementById('cpassword')
+            let cpassworderror=document.getElementById('cpassworderror')
+            let success=document.getElementById('successmessage')
+
+            let flag=true;
+            if(name.value==""){
+                nameerror.innerHTML="Name is required"
+                flag=false;
+            }
+   let emailpattern=/[a-zA-Z0-9._]+@[a-z]+\.[a-z]{3}/
+   let passwordpattern=/(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%^&]).{8}/
+    if(!email.value.match(emailpattern)){
+        emailerror.innerHTML='Enter valid email'
+        flag=false
+    }
+    if(!password.value.match(passwordpattern)){
+        passworderror.innerHTML='Password must contain uppercase, number ,special and minimum 8 characters'
+        flag=false
+    }
+    if(password.value!=cpassword.value){
+        cpassworderror.innerHTML='password not matched'
+        flag=false
+    }
+
+            if(flag){
+                success.innerHTML='form submitted succcessfully'
+            }
+        }
+    </script>
+   
+
+
+</body>
+</html>

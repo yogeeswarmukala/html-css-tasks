@@ -1,0 +1,240 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Shopping App</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f4f8;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .controls {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 25px;
+        }
+
+        input, select, button {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 15px;
+        }
+
+        button {
+            background: #2563eb;
+            color: white;
+            cursor: pointer;
+            border: none;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+
+        #productscontainer {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px #ddd;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .emoji {
+            font-size: 50px;
+        }
+
+        .price {
+            color: green;
+            font-weight: bold;
+        }
+
+               /* let products = [
+            {
+                name: "Headphones",
+                category: "Electronics",
+                price: 2499,
+                stock: 10,
+                emoji: "🎧"
+            },
+            {
+                name: "Running Shoes",
+                category: "Fashion",
+                price: 1899,
+                stock: 5,
+                emoji: "👟"
+            },
+            {
+                name: "Smart Watch",
+                category: "Electronics",
+                price: 3499,
+                stock: 0,
+                emoji: "⌚"
+            },
+            {
+                name: "Backpack",
+                category: "Accessories",
+                price: 1299,
+                stock: 8,
+                emoji: "🎒"
+            },
+            {
+                name: "T-Shirt",
+                category: "Fashion",
+                price: 599,
+                stock: 12,
+                emoji: "👕"
+            },
+            {
+                name: "Bluetooth Speaker",
+                category: "Electronics",
+                price: 1599,
+                stock: 3,
+                emoji: "🔊"
+            }
+        ]; */
+
+    </style>
+</head>
+
+<body>
+    <h1>Simple Shopping App</h1>
+    <div class="controls">
+        <input type="search" id="search" placeholder="search products...">
+        <select name="" id="category">
+            <option value="">All</option>
+            <option value="electronics">Electronics</option>
+            <option value="accessories">Accessories</option>
+            <option value="fashion">Fashion</option>
+        </select>
+
+        <select name="" id="sort">
+            <option value="default">Default order</option>
+            <option value="high">Price: high to low</option>
+            <option value="low">Price: low to high</option>
+        </select>
+
+        <button id="allbtn">Show all</button>
+    </div>
+    <div id="productscontainer"></div>
+
+    <script>
+            let products = [
+            {
+                name: "Headphones",
+                category: "Electronics",
+                price: 2499,
+                stock: 10,
+                emoji: "🎧"
+            },
+            {
+                name: "Running Shoes",
+                category: "Fashion",
+                price: 1899,
+                stock: 5,
+                emoji: "👟"
+            },
+            {
+                name: "Smart Watch",
+                category: "Electronics",
+                price: 3499,
+                stock: 0,
+                emoji: "⌚"
+            },
+            {
+                name: "Backpack",
+                category: "Accessories",
+                price: 1299,
+                stock: 8,
+                emoji: "🎒"
+            },
+            {
+                name: "T-Shirt",
+                category: "Fashion",
+                price: 599,
+                stock: 12,
+                emoji: "👕"
+            },
+            {
+                name: "Bluetooth Speaker",
+                category: "Electronics",
+                price: 1599,
+                stock: 3,
+                emoji: "🔊"
+            }
+        ]; 
+
+        function displayproducts(data){
+            let productscontainer=document.getElementById('productscontainer')
+            productscontainer.innerHTML=''
+            productscontainer.innerHTML=data.map((val)=>{
+             return   `
+              <div class='card'>
+               <div class='emoji'>${val.emoji}</div>
+               <h3>${val.name}</h3>   
+               <p>${val.category}</p> 
+               <p class='price'>${val.price}</p> 
+            </div>
+             `
+            }).join('')
+        }
+        displayproducts(products)
+
+        let search=document.getElementById('search')
+        search.addEventListener('input',function(){
+            let newarr=products.filter(val=>val.name.toLowerCase().includes(search.value.toLowerCase()))
+            displayproducts(newarr)  
+        })
+
+
+        let category=document.getElementById('category')
+        category.addEventListener('change',function(){
+            let newarr=products.filter(val=>val.category.toLowerCase()==category.value
+             || category.value=="")
+            displayproducts(newarr)
+        })
+
+        let sort=document.getElementById('sort')
+        sort.addEventListener('change',function(){
+            let result=products
+            if(sort.value=='low'){
+               result=[...products].sort((a,b)=>a.price-b.price)
+            }
+            if(sort.value=='high'){
+               result=[...products].sort((a,b)=>b.price-a.price)
+            }
+            displayproducts(result)
+        })
+
+        let allbtn=document.getElementById('allbtn')
+        allbtn.addEventListener('click',function(){
+            search.value=''
+            displayproducts(products)
+        })
+    </script>
+</body>
+</html>

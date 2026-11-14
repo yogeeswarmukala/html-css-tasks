@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" id="registerform">
+        <input id="inp1" type="text" placeholder="username">
+        <input id="inp2" type="password" placeholder="password">
+        <button type="submit">submit</button>
+    </form>
+
+    <script>
+        /*
+        how to handle forms
+
+        */ 
+       let registerform=document.getElementById('registerform')
+       console.log(registerform)
+       registerform.onsubmit=function(event){
+        //it will prevent the automatic form submission
+        event.preventDefault()
+        console.log('form submitted')
+        //1)using event
+        console.log(event.target[0].value)
+        console.log(event.target[1].value)
+        //using geteleemtnbyid
+        let inp1=document.getElementById('inp1').value
+        let inp2=document.getElementById('inp2').value
+        console.log(inp1,inp2)
+       }
+
+    /*
+    regex-regular expressions
+    it is used specify the pattern for validations
+    
+    patterns
+    [a-z]-single occurence
+
+    multiple occurence
+    [a-z]+
+    [A-Z]+
+    [0-9]+
+    [a-zA-Z0-9]+
+    [#$%@^]+
+
+
+    mobile
+      let pattern=/[0-9]{10}/
+   let input='89237483249'
+   console.log(input.match(pattern))    
+
+
+    email pattern
+    name- [a-zA-Z0-9._]+
+    @ -  @
+    gmail- [a-z]+
+    dot - .
+    com - [a-z]{3}
+
+
+    password rules
+    one uppercase= (?=.*[A-Z])
+    one lowercasse- (?=.*[a-z])
+    one number-  (?=.*[0-9])
+    one special - (?=.*[!@#$%^&])
+    length- {8}
+    */
+   let pattern=/[0-9]{10}/
+   let input='89237483249'
+   console.log(input.match(pattern)) 
+   
+   let emailpattern=/[a-zA-Z0-9._]+@[a-z]+\.[a-z]{3}/
+   let passwordpattern=/(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%^&]).{8}/
+   let usermail='john@gmail.com'
+   console.log(usermail.match(emailpattern))
+
+   let userpassword='John@123'
+   console.log(userpassword.match(passwordpattern))
+
+
+    </script>
+</body>
+</html>

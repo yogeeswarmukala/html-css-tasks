@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let a= function(){
+        //     console.log('hello welcome to the page')
+        // }
+        // a()
+        
+        // let sum=a=>a+a
+        // console.log(sum(2))
+        //imp is call back function ask in interview
+        //  (function(){
+        //     console.log('hello')
+        //  })()
+
+        //  function breakfast(callback){
+        //     console.log('i had completed my morning breakfast')
+        //     callback(college)
+        // }
+        // function college(callback){
+        //     console.log('now i am at the college')
+        //     callback(classes)
+        // }
+        // function classes(){
+        //     console.log('now i am taking the classes')
+        // }
+        // breakfast(college)
+        function outer(){
+            let c=0
+            console.log('outer function  is executed')
+            return function(){
+                c++
+                console.log('inner function is executed')
+                console.log(c)
+            }
+        }
+        let a=outer()
+        a()
+        a()
+         
+    </script>
+</body>
+</html>

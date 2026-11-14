@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+        
+        flexbox 
+        it is one dimensional layout model that is used to 
+        create layouts for a webpage
+        
+        flex-container(parent properties)
+        1) display:flex
+        it will create the flexbox and changes the child direction into row
+        
+
+        2) flex direction
+        flex-direction:row;....by default
+        flex-direction:column;
+        flex-direction:row-reverse;
+        flex-direction:column-reverse;
+
+        3) justify-content
+        it is used to align the child items on main axis
+        justify-content:center;
+        justify-content:end;
+        justify-content:start;/by default
+        justify-content:space-between;
+        justify-content:space-evenly;
+        justify-content:space-around;
+        
+        
+        4) align items
+        it is used to align the child items on cross axis
+         align-items:stretch;
+        align-items:center;
+        align-items:end;
+        align-items:start;
+
+        5) wrap
+        it is used to move the child items to the next row 
+        flex-wrap:wrap;
+        flex-wrap:wrapreverse;
+        
+        6) align content
+        it is used to align the item on cross axis when there is more than one row
+        align-content:center;
+        align-content:end;
+        align-content:start;
+        align-content:space-between;
+        align-content:space-around;
+        align-content:space-evenly;
+        
+        7) it is a shorthand for directio and wrap
+        flex-flow: row-reverse wrap;
+        flex-flow: column-reverse wrap-reverse;
+        
+        flex-items(child properties)
+        1) 
+        flex-basis - it specifies initial lenght for a child item
+
+        flex-basis:30%;
+        */
+        .parent{
+            height:100vh;
+            border:2px solid blue;
+            display:flex;
+            flex-direction:column;
+            flex-direction:row-reverse;
+            flex-direction:column-reverse;
+            flex-direction:row;
+        justify-content:center;
+        justify-content:end;
+        justify-content:space-between;
+        justify-content:space-evenly;
+        justify-content:space-around;
+        justify-content:start;/*by default*/
+        align-items:center;
+        align-items:end;
+        align-items:start;
+        align-items:stretch;    
+        gap: 20px;
+        flex-wrap:wrap;
+        flex-wrap:wrap-reverse;
+        align-content:center;
+        align-content:end;
+        align-content:start;
+        align-content:space-between;
+        align-content:space-around;
+        align-content:space-evenly;
+        align-content:stretch;
+        flex-flow:row wrap;
+        }
+        .child{
+            background:lightsalmon;
+           
+        flex-basis:40%;
+        }
+        #demo{
+            order:10;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="child">child1</div>
+        <div class="child">child2</div>
+        <div class="child">child3</div>
+        <div class="child">child4</div>
+        <div class="child">child5</div>
+        <div class="child" id="demo">child6</div>
+        <div class="child">child7</div>
+        <div class="child">child8</div>
+        <div class="child">child9</div>
+        <div class="child">child10</div>
+    </div>
+    
+</body>
+</html>

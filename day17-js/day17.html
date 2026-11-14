@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <!-- 
+    static webpage
+    html css  bootstrap
+
+    dynamic webpages-javascript
+    amazon- addtocart,search,validation,favs,login,signup,crud operations
+    flipkart
+
+    javascript is highlevel interpreted programming language that is used to 
+    create dynamic nature to webpages
+    ex: addtocart,search,validation,favs,login,signup,crud operations
+
+    variables
+    datatypes
+    arrays
+    strings
+    loops
+    conditions
+    functions
+
+    how to insert js
+    1) inline js
+    <button onclick="console.log('welcome to inline js')">click me</button>
+
+    2) internal js
+      <script>
+      console.log("welome to internal js")
+    </script>
+
+    3) external js
+     demo.js
+     console.log('welcome to external js')
+    <script src="demo.js"></script>
+
+
+    run
+    open with live server
+    ctrl shift j
+    -->
+    <button onclick="console.log('welcome to inline js')">click me</button>
+
+    <script>
+      console.log("welcome to internal js")
+/*
+variables
+variables are like containers which is used to store the data and the data
+could be anything
+
+variables are defined with var,let const keywords followed by variable name(idenitifer)
+
+var a=1;
+let b=2;
+const c=3;
+console.log(a,b,c)
+
+variable terms
+declaration- allocating a memory to a variable
+var dec;
+
+undefined- a variable that defined without an value
+console.log(dec);
+
+assignement-declaration in one line and assiging value in another line
+var as;
+as=20;
+as=30;
+console.log(as)
+
+initialization- declaration and assigning in same line
+var inti='hello world'
+
+not defined
+when we call a undeclared variable
+console.log(udec)
+
+
+hoisting
+hoisting is a behaviour where the declartion of a variables and functions are moved
+to top even before the execution
+
+console.log(val);//undfined
+var val=10;
+*/ 
+
+// var a=1;
+// let b=2;
+// const c=3;
+// console.log(a,b,c)
+
+// var dec;
+// console.log(dec);
+
+// var as;
+// as=20;
+// as=30;
+// console.log(as);
+
+// var inti='hello world';
+// console.log(inti);
+
+// // console.log(udec);
+
+// console.log(val);//
+// var val=10;
+
+
+/*
+datatypes
+a) primitive data types
+which stores the single values
+which are immutable
+stores in stack
+
+1) strings
+it is a collection of characters that are enclosed in single or double or back ticks
+string are immutable
+var str='john';
+var name="jessy";
+var std=`jane`
+
+how strings are immutable
+var str='hello world';
+str[0]='z'
+console.log(str[0])
+console.log(str)
+
+2) numbers
+var a=10;
+var b=10.5;
+var c=-10.5;
+console.log(a,b,c)
+
+3) boolean-true or false
+var isadmin=true;
+var premium=true;
+var student=false;
+console.log(isadmin,premium,student)
+
+4) undefined -a variable without a value
+5) null
+  it is a intensional absence of value
+  var emp1=null;
+  var mgr=null;
+  var staffcount=null;
+
+b) non primitive data types
+which store the multi values
+which are mutable
+stores in heap
+
+1) array
+it is used to store the multiple values in single variable
+and can be accessed using numbered indexing
+it is a homogenous and heterogeneous
+
+var box=['chicken curry','bagara rice','eggs']
+box[1]='biriyani'
+console.log(box[0])
+console.log(box)
+
+2) objects
+it is used to store the collection of data in key value pairs
+
+var obj={
+    batchno:3,
+    count:50,
+    duration:40
+}
+//dot notation
+console.log(obj.count)
+//square notation
+console.log(obj['count'])
+
+console.log(obj)
+*/ 
+var emp;
+console.log(emp+1)
+var str='hello world';
+str[0]='z'
+console.log(str[0])
+console.log(str)
+
+var a=10;
+var b=10.5;
+var c=-10.5;
+console.log(a,b,c)
+
+var isadmin=true;
+var premium=true;
+var student=false;
+console.log(isadmin,premium,student)
+
+  var emp1=null;
+  var mgr=null;
+  var staffcount=null;
+  console.log(staffcount+1)
+
+var box=['chicken curry','bagara rice','eggs']
+box[1]='biriyani'
+console.log(box[0])
+console.log(box)
+
+var obj={
+    batchno:3,
+    count:50,
+    duration:40
+}
+obj.duration=45
+//dot notation
+console.log(obj.count)
+//square notation
+console.log(obj['count'])
+
+console.log(obj)
+// functions
+function greet(){
+    console.log('hello dear')
+}
+greet()
+greet()
+console.log(typeof obj)
+
+// define every datatype and checch the type of the datatype
+
+    </script>
+    <script src="demo.js"></script>
+</body>
+</html>
